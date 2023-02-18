@@ -10,10 +10,10 @@ public class Main {
         }
         return charSet.size() == s.length();
     }
-    static int getMarkerIndex(String s){
-        for (int i = 0; i < s.length()-4; i++){
-            if (allDiff(s.substring(i, i+4))){
-                return i+4;
+    static int getMarkerIndex(String s, int n){
+        for (int i = 0; i < s.length()-n; i++){
+            if (allDiff(s.substring(i, i+n))){
+                return i+n;
             }
 
         }
@@ -24,8 +24,7 @@ public class Main {
         try (BufferedReader br = new BufferedReader(new FileReader("./input.txt"))) {
             String line;
             while ((line = br.readLine()) != null){
-                System.out.println(line);
-                System.out.println(getMarkerIndex(line));
+                System.out.println(getMarkerIndex(line, 14));
             }
 
 
